@@ -83,22 +83,3 @@ std::vector<std::string> Bot::dump_commands() const {
 void Bot::rec_cmd(const std::string& command) {
     command_log.push_back(command);
 }
-
-// int main() {
-//     Bot bot = Bot::with_default_pose("Bandu_test-case");
-//     bot.greet();
-//     bot.current_position();
-//     bot.walk(10.43);
-//     bot.walk(15);
-//     bot.turn(Dir::B);
-//     bot.walk(10);
-//     bot.current_position();
-
-//     Pose start_pos = { Dir::A, 10, 3 };
-//     std::vector<std::variant<Dir, float>> commands = { Dir::A, 10.0f, Dir::C, 12.4f};
-//     bot.predict(start_pos, commands);
-
-//     bot.dump_commands();
-
-//     return 0;
-// }
