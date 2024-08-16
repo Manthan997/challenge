@@ -79,13 +79,13 @@ class Bot:
         
         # update the position of the bot based on the distance AND direction it is facing
         # another check for bot leaving the playground limits
-        new_x = self.__pose.x_cord + distance * math.sin(self.__pose.Facing.value)
+        new_x = int(self.__pose.x_cord + distance * math.sin(self.__pose.Facing.value))
         if -X_LIM <= new_x <= X_LIM:
             self.__pose.x_cord = new_x
         else:
             raise ValueError("Bot is out of the playground limits")
         
-        new_y = self.__pose.y_cord + distance * math.cos(self.__pose.Facing.value)
+        new_y = int(self.__pose.y_cord + distance * math.cos(self.__pose.Facing.value))
         if -Y_LIM <= new_y <= Y_LIM:
             self.__pose.y_cord = new_y
         else:

@@ -1,6 +1,6 @@
 TODO
 ---
-0. debug the cpp issue/ pose error
+
 1. add the problem statement for this repo
 2. and how to use cpp and python files and compiling instructions for cpp
 3. add instructions for testing
