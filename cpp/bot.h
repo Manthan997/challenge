@@ -34,7 +34,7 @@ public:
     static Bot with_custom_pose(const std::string& name, const Pose& pose, float dist);
 
     void greet() const;
-    Pose current_position() const;
+    Pose current_position() ;
     void walk(float distance);
     void turn(Dir direction);
     std::pair<Pose, float> predict(const Pose& start_pos, const std::vector<std::variant<Dir, float>>& move_commands, float dist = 0.0);
@@ -46,7 +46,7 @@ private:
     Pose pose;
     float distance;
     std::vector<std::string> command_log;
-
+    std::string dirToString(Dir dir);
     void rec_cmd(const std::string& command);
 };
 

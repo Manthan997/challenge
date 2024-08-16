@@ -17,8 +17,22 @@ void Bot::greet() const {
     std::cout << "Hello! I am " << name << "." << std::endl;
 }
 
-Pose Bot::current_position() const {
-    std::cout << "Current position of " << name << " : (" << pose.x_cord << ", " << pose.y_cord << ") facing " << static_cast<int>(pose.Facing) << std::endl;
+// Function to convert enum to string
+std::string Bot::dirToString(Dir dir) {
+    switch (dir) {
+        case Dir::A: return "A";
+        case Dir::B: return "B";
+        case Dir::C: return "C";
+        case Dir::D: return "D";
+        case Dir::E: return "E";
+        case Dir::F: return "F";
+        default: throw std::invalid_argument("Invalid direction");
+    }
+}
+
+
+Pose Bot::current_position()  {
+    std::cout << "Current position of " << name << " : (" << pose.x_cord << ", " << pose.y_cord << ") facing " << dirToString(pose.Facing) << std::endl;
     return pose;
 }
 
@@ -49,6 +63,7 @@ void Bot::turn(Dir direction) {
     pose.Facing = direction;
     rec_cmd("turn " + std::to_string(static_cast<int>(direction)));
 }
+
 
 std::pair<Pose, float> Bot::predict(const Pose& start_pos, const std::vector<std::variant<Dir, float>>& move_commands, float dist) {
     Bot t_bot = Bot::with_custom_pose("TEMP", start_pos, dist);

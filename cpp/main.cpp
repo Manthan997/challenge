@@ -14,7 +14,7 @@ int main() {
     bot.current_position();
 
     Pose start_pos = { Dir::A, 0, 0 };
-    std::vector<std::variant<Dir, float>> commands = { Dir::A, 10.0f, Dir::B, 10.0f, Dir::C, 10.0f, Dir::D, 10.0f, Dir::E, 10.0f, Dir::F, 10.0f, Dir::A };
+    std::vector<std::variant<Dir, float>> commands = { Dir::A, 10.0f, Dir::B, 10.0f, Dir::C, 10.0f, Dir::D, 10.0f, Dir::E, 10.0f, Dir::F, 10.0f };
     bot.predict(start_pos, commands);
 
     bot.dump_commands();
