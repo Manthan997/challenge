@@ -3,6 +3,8 @@
 
 Refer doc: [click here!](https://docs.google.com/document/d/1aB7zA10enCwJgz3QGojBsun_WN2dECSGKZTJ4mmg6M0/edit?usp=sharing)
 
+VHDL problem statement is here: [flyyy to google docs](https://docs.google.com/document/d/1cF8WSD8Pkb7U2rS1ud0kPp2D9WSB6zt1FlkkjZlO0jM/edit?usp=sharing)
+
 ### Task:
 Bandu always spawns at (0,0) facing North. For every instance, you have a target location that bandu needs to reach. You can guide bandu using commands walk(<dist>) and turn(<Dir>) but the problem is bandu’s sub-system responsible for turning is broken and can only perform turns in multiples of 60 degrees. Walk command accepts a float parameter and the bot walks in the direction it is facing for the specified number Of units. Turn command accepts a single parameter that is an enum Dir. 
 
