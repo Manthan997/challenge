@@ -54,7 +54,7 @@ class Bot:
 
     def greet(self):
         # greet the user
-        print(f"Hello! I am {self.__name}.")
+        print(f"Hello! I am {self.__name}. Please help me to reach home.")
 
     # list of required functions
     ''' current position

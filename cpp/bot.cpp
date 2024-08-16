@@ -14,7 +14,7 @@ Bot Bot::with_custom_pose(const std::string& name, const Pose& pose, float dist)
 }
 
 void Bot::greet() const {
-    std::cout << "Hello! I am " << name << "." << std::endl;
+    std::cout << "Hello! I am " << name << ". Please help me to reach home." << std::endl;
 }
 
 // Function to convert enum to string
