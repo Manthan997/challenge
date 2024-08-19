@@ -83,12 +83,18 @@ class Bot:
         if -X_LIM <= new_x <= X_LIM:
             self.__pose.x_cord = new_x
         else:
+            if bot.__name == "TEMP_bot":
+                print("predict Bot is out of the playground limits")
+                return self.__pose
             raise ValueError("Bot is out of the playground limits")
         
         new_y = int(self.__pose.y_cord + distance * math.cos(self.__pose.Facing.value))
         if -Y_LIM <= new_y <= Y_LIM:
             self.__pose.y_cord = new_y
         else:
+            if bot.__name == "TEMP_bot":
+                print("predict Bot is out of the playground limits")
+                return self.__pose
             raise ValueError("Bot is out of the playground limits")
         
         # update the distance covered by the bot
@@ -110,7 +116,7 @@ class Bot:
 
     def predict(self, start_pos: Pose, move_commands: list, dist:float =0.0):
         # CREATE A TEMP bot based on the start position
-        t_bot = Bot.with_custom_pose("TEMP", start_pos, dist)
+        t_bot = Bot.with_custom_pose("TEMP_bot", start_pos, dist)
         # follow the list of commands
         for i in range(len(move_commands)):
             # check if the command is to walk

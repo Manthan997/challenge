@@ -45,6 +45,10 @@ void Bot::walk(float distance) {
     if (-X_LIM <= new_x && new_x <= X_LIM) {
         pose.x_cord = static_cast<int>(new_x);
     } else {
+        if (name == "TEMP_bot") {
+                std::cout << "predict Bot is out of the playground limits" << std::endl;
+                return;
+            }
         throw std::out_of_range("Bot is out of the playground limits");
     }
 
@@ -52,6 +56,10 @@ void Bot::walk(float distance) {
     if (-Y_LIM <= new_y && new_y <= Y_LIM) {
         pose.y_cord = static_cast<int>(new_y);
     } else {
+        if (name == "TEMP_bot") {
+                std::cout << "predict Bot is out of the playground limits" << std::endl;
+                return;
+            }
         throw std::out_of_range("Bot is out of the playground limits");
     }
 
@@ -66,7 +74,7 @@ void Bot::turn(Dir direction) {
 
 
 std::pair<Pose, float> Bot::predict(const Pose& start_pos, const std::vector<std::variant<Dir, float>>& move_commands, float dist) {
-    Bot t_bot = Bot::with_custom_pose("TEMP", start_pos, dist);
+    Bot t_bot = Bot::with_custom_pose("TEMP_bot", start_pos, dist);
 
     for (const auto& command : move_commands) {
         if (std::holds_alternative<float>(command)) {
