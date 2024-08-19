@@ -83,7 +83,8 @@ class Bot:
         if -X_LIM <= new_x <= X_LIM:
             self.__pose.x_cord = new_x
         else:
-            if bot.__name == "TEMP_bot":
+            # self.__pose.x_cord = new_x              #redundant logic here
+            if self.__name == "TEMP_bot":
                 print("predict Bot is out of the playground limits")
                 return self.__pose
             raise ValueError("Bot is out of the playground limits")
@@ -92,7 +93,7 @@ class Bot:
         if -Y_LIM <= new_y <= Y_LIM:
             self.__pose.y_cord = new_y
         else:
-            if bot.__name == "TEMP_bot":
+            if self.__name == "TEMP_bot":
                 print("predict Bot is out of the playground limits")
                 return self.__pose
             raise ValueError("Bot is out of the playground limits")
